@@ -5,16 +5,16 @@
 # MIT Licensed
 
 panel:
-  lastmod: Recent Update
-  trending_tags: Trending Tags
-  toc: Contents
+  lastmod: Actualizaciones recientes
+  trending_tags: Etiquetas populares
+  toc: Contenido
 
 post:
-  relate_posts: Further Reading
+  relate_posts: Lecturas relacionadas
   button:
-    next: Newer
-    previous: Older
+    next: Siguiente
+    previous: Anterior
 
-search_hint: Search   # text show on search bar
+search_hint: Buscar   # text show on search bar
 
-pin_prompt: Pinned   # pinned prompt
+pin_prompt: Fijado   # pinned prompt

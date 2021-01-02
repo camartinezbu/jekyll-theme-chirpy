@@ -18,8 +18,8 @@ layout: default
       <div class="post-meta text-muted d-flex flex-column">
         <!-- Published date and author -->
         <div>
-          {% include timeago.html date=page.date tooltip=true %}
-          by
+          {% include timeago.html date=page.date tooltip=false %}
+          por
           <span class="author">
             {{ page.author | default: site.author }}
           </span>
@@ -29,7 +29,7 @@ layout: default
           <!-- lastmod -->
           {% if page.last_modified_at %}
           <span>
-            Updated
+            Actualizado el
             {% include timeago.html date=page.last_modified_at class="lastmod" tooltip=true %}
           </span>
           {% endif %}
@@ -94,9 +94,9 @@ layout: default
           d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
           {% if site.data.rights.license %}
           <div class="license-wrapper">
-            This post is licensed under
+            Esta publicación está autorizada bajo licencia
             <a href="{{ site.data.rights.license.link }}">{{ site.data.rights.license.name }}</a>
-            by the author.
+            por el autor.
           </div>
           {% endif %}
 

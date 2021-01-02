@@ -24,7 +24,20 @@ layout: page
         {% capture this_day %}{{ post.date | date: "%d" }}{% endcapture %}
         {% capture this_month %}{{ post.date | date: "%b" }}{% endcapture %}
         <span class="date day">{{ this_day }}</span>
-        <span class="date month small text-muted">{{ this_month }}</span>
+        {% case this_month %}
+        {% when 'Jan' %}<span class="date month small text-muted">Ene</span>
+        {% when 'Feb' %}<span class="date month small text-muted">Feb</span>
+        {% when 'Mar' %}<span class="date month small text-muted">Mar</span>
+        {% when 'Apr' %}<span class="date month small text-muted">Abr</span>
+        {% when 'May' %}<span class="date month small text-muted">May</span>
+        {% when 'Jun' %}<span class="date month small text-muted">Jun</span>
+        {% when 'Jul' %}<span class="date month small text-muted">Jul</span>
+        {% when 'Aug' %}<span class="date month small text-muted">Ago</span>
+        {% when 'Sep' %}<span class="date month small text-muted">Sept</span>
+        {% when 'Oct' %}<span class="date month small text-muted">Oct</span>
+        {% when 'Nov' %}<span class="date month small text-muted">Nov</span>
+        {% when 'Dec' %}<span class="date month small text-muted">dicc</span>
+        {% endcase %}
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </div>
     </li>

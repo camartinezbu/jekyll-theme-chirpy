@@ -41,10 +41,10 @@ $prompt-newer: "{{ site.data.label.post.button.next }}";
     }
   }
   #pv::after {
-    content: " views";
+    content: " visitas";
   }
   .readtime::after {
-    content: " read";
+    content: "";
   }
 }
 

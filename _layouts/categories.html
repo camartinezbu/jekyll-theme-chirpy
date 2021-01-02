@@ -59,7 +59,7 @@ layout: page
             {% if sub_categories_size > 1 %}categories{% else %}category{% endif %},
           {% endif %}
             {{ top_posts_size }}
-            post{% if top_posts_size > 1 %}s{% endif %}
+            publicación{% if top_posts_size > 1 %}es{% endif %}
         </span>
       </span>
 
@@ -89,7 +89,7 @@ layout: page
             class="ml-1 mr-2">{{ sub_category }}</a>
           {% assign posts_size = site.categories[sub_category] | size %}
           <span class="text-muted small font-weight-light">{{ posts_size }}
-            post{% if posts_size > 1 %}s{% endif %}
+            publicación{% if posts_size > 1 %}es{% endif %}
           </span>
         </li>
         {% endfor %}
