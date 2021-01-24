@@ -3,7 +3,7 @@ title: 4 paquetes que debes conocer para hacer mapas en R
 date: 2021-01-17 09:45:00 -0500
 categories: [R, Tutorial]
 tags: [mapas, r, leaflet, sf, ggplot, tmap]
-image: /assets/img/posts/2020-01-17-4-paquetes-que-debes-conocer-para-hacer-mapas-en-r/pexels-andrew-neel-2859169.jpg
+image: /assets/img/posts/2021-01-17-4-paquetes-que-debes-conocer-para-hacer-mapas-en-r/pexels-andrew-neel-2859169.jpg
 excerpt: Aqui una alternativa a ArcGIS o QGIS.
 ---
 
