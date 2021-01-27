@@ -73,7 +73,7 @@ ggplot(data = mi_shape) +
     geom_sf()
 ```
 
-![Mapa de las localidades de Bogotá usando ggplot2](/assets/img/posts/2020-01-17-4-paquetes-que-debes-conocer-para-hacer-mapas-en-r/mapa_ggplot.png)
+![Mapa de las localidades de Bogotá usando ggplot2](/assets/img/posts/2021-01-17-4-paquetes-que-debes-conocer-para-hacer-mapas-en-r/mapa_ggplot.png)
 *Mapa de las localidades de bogotá usando ggplot2*
 
 De aqui en adelante, puedes jugar con las opciones de temas de ggplot2, para cambiar el color de fondo, la fuente, los ejes, entre muchas otras cosas. Por ejemplo, intenta añadir al final del código anterior `+ theme_void()`. Casi cualquier configuración que funcionaría para un ggplot normal, funciona para un mapa hecho de esta forma.
@@ -91,7 +91,7 @@ tm_shape(mi_shape) +
     tm_polygons()
 ```
 
-![Mapa de las localidades de Bogotá usando tmap](/assets/img/posts/2020-01-17-4-paquetes-que-debes-conocer-para-hacer-mapas-en-r/mapa_tmap.png)
+![Mapa de las localidades de Bogotá usando tmap](/assets/img/posts/2021-01-17-4-paquetes-que-debes-conocer-para-hacer-mapas-en-r/mapa_tmap.png)
 *Mapa de las localidades de bogotá usando tmap*
 
 Una vez estés familiarizado con este paquete, te recomiendo revisar el paquete `tmaptools`, que contiene algunas funciones útiles para trabajar con `tmap`.
@@ -113,7 +113,7 @@ leaflet(data = mi_shape) %>%
 ```
 
 <div style = "height: 30em; padding: 0; display: flex; justify-content: center;" class = "htmlwidget" >
-    <iframe src="../../assets/img/posts/2020-01-17-4-paquetes-que-debes-conocer-para-hacer-mapas-en-r/mapa_leaflet.html" style = "width: 100%; height:100%;"></iframe>
+    <iframe src="../../assets/img/posts/2021-01-17-4-paquetes-que-debes-conocer-para-hacer-mapas-en-r/mapa_leaflet.html" style = "width: 100%; height:100%;"></iframe>
 </div>
 *Mapa de las localidades con leaflet*
 
