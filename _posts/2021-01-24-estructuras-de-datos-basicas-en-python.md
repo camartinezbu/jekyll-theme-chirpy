@@ -27,7 +27,7 @@ mi_lista2 = ['Camilo', 'Martinez', 'Ciencia', 'Datos']
 
 ### b. Acceder a los elementos de una lista
 
-Como mencionaba con anterioridad, las listas están indexadas de manera numérica de conformidad a la posición de cada elemento de la lista. Esto es lo que permite acceder a los elementos de manera ordenada cuando estemos trabajando.
+Como mencionaba con anterioridad, las listas están indexadas de manera numérica de conformidad con la posición de cada elemento de la lista. Esto es lo que permite acceder a los elementos de manera ordenada cuando estemos trabajando.
 
 > **Nota:**: Aquí es muy importante decir que en Python se empieza contando desde 0. Es decir, el primer elemento de una lista tendrá un índice 0, el segundo tendrá un índice 1 y así sucesivamente.
 
