@@ -3,7 +3,7 @@ title: Mapas de calor como calendarios en R
 date: 2021-05-19 11:30:00 -0500
 categories: [R, Tutorial]
 tags: [r, calendar, heatmap, dataviz]
-image: /assets/img/posts/2021-05-20-calendarios-con-mapas-de-calor-en-R/calendar_heatmap_shadow.png
+image: /assets/img/posts/2021-05-19-mapas-de-calor-como-calendarios-en-R/calendar_heatmap_shadow.png
 excerpt: Una manera creativa de presentar datos con fechas.
 ---
 
@@ -113,14 +113,14 @@ Lo más importante está en que entiedas el llamado inicial de `ggplot()`, en el
 
 Cuando corras ese código, vas a tener el siguiente resultado:
 
-![Calendar Heatmap](/assets/img/posts/2021-05-20-calendarios-con-mapas-de-calor-en-R/calendar_heatmap.png)
+![Calendar Heatmap](/assets/img/posts/2021-05-19-mapas-de-calor-como-calendarios-en-R/calendar_heatmap.png)
 *Mapa de calor en forma de calendario*
 
 ## Un ajuste menor al texto
 
 Como te podrás dar cuenta, los números en color bñanco no son fáciles de leer cuando el color del día es más claro. Esto podrías solucionarlo cambiando el color del texto o, como hice yo, usando el paquete `shadowtext`. Este paquete incluye una función para `ggplot2` que funciona muy parecido a `geom_text()`, sólo que añade una sombra alrededor del texto: `geom_shadowtext()`. Reemplzando esta función en el código de arriba, ¡queda listo el mapa de calor con forma de calendario!
 
-![Calendar Heatmap](/assets/img/posts/2021-05-20-calendarios-con-mapas-de-calor-en-R/calendar_heatmap_shadow.png)
+![Calendar Heatmap](/assets/img/posts/2021-05-19-mapas-de-calor-como-calendarios-en-R/calendar_heatmap_shadow.png)
 *Mapa de calor en forma de calendario*
 
 Con esta visualización podemos ver rápidamente que parece haber unos picos de registros de violencia intrafamiliar en fechas como navidad, año nuevo y el día de la madre, y que en términos generales parece que se registran más casos en los fines de semana. ¿Ves lo fácil que es extraer toda esta información con una sóla mirada?
