@@ -7,7 +7,7 @@ image: /assets/img/posts/2021-05-19-mapas-de-calor-como-calendarios-en-R/hero.jp
 excerpt: Una manera creativa de presentar datos con fechas.
 ---
 
-Después de una pausa de algunas semanas vuelvo a escribir posts semanales en el blog. Para comenzar, quiero compartirles una visualización que me llamó mucho la atención al leer el libro [Better Data Visualizations](https://www.amazon.com/Better-Data-Visualizations-Scholars-Researchers/dp/0231193114) de Jonathan Schwabish: Los *Heatmap calendars*, que acá voy a traducir -probablemente mal- como amapas de calor en forma de calendarios. Buena parte del insumo para este post viene de [este tutorial](https://vietle.info/post/calendarheatmap/) de Viet Le.
+Después de una pausa de algunas semanas vuelvo a escribir posts semanales en el blog. Para comenzar, quiero compartirles una visualización que me llamó mucho la atención al leer el libro [Better Data Visualizations](https://www.amazon.com/Better-Data-Visualizations-Scholars-Researchers/dp/0231193114) de Jonathan Schwabish: Los *Heatmap calendars*, que acá voy a traducir -probablemente mal- como mapas de calor en forma de calendarios. Buena parte del insumo para este post viene de [este tutorial](https://vietle.info/post/calendarheatmap/) de Viet Le.
 
 ## Paquetes necesarios
 
@@ -21,7 +21,7 @@ Voy a usar un archivo de excel que contiene los registros de violencia intrafami
 
 Esta base de datos contiene los siguientes campos de información: Departamento, Municipio, Código DIVIPOLA del municipio, Arma empleada, Fecha del registro, Sexo de la víctima, Grupo de edad de la víctima y un contador de cantidad de hechos. Para este ejercicio sólo nos interesa usar la fecha.
 
-## Impotación
+## Importación
 
 Lo primero que hay que hacer es cargar los paquetes que vamos a usar. Posteriormente, cargo la base de datos llamando de la función `read_xlsx()` del paquete `readxl` y la guardo en un objeto llamado `vif`.
 
@@ -40,7 +40,7 @@ tz(vif$`FECHA HECHO`) <- "America/Bogota"
 
 Acá vale la pena mencionar que por alguna razón escribir el rango de las celdas en el argumento `range` de `read_xslx()` en la forma `A1:H113894` me generaba un error en la lectura. Una búsqueda rápida en internet me llevó a escribir el rango dentro de la función `cell_limits()`, lo que corrigió el problema.
 
-## Procesamiento
+## Procesamiento
 
 Aquí viene la parte mas importante. En esencia, lo que hacemos para hacer el mapa de calor en forma de calendario es colorear doce grillas de 7x4 -7 días y 4 semanas-, donde el color de cada celda obedece a un conteo de registros de violencia intrafamiliar.
 
@@ -72,7 +72,7 @@ Vamos por partes. En el primer bloque de código creo una variable `FECHA` que c
 - `MES`: Una variable  que indica el mes del registro, con las etiquetas en español.
 - `SEMANA`: Una variable que indica la semana del año a la que pertenece cada fecha,de 1 a 52, usando la función `isoweek()`.
 
-Ahora bien, como puedes ver, hay una línea de código que modifica manualmente la variable semana. Esto sucede porque `isoweek()` define automáticamente la última semana del año como 1, si contiene algún día del año siguiente. Por esta razón, se define que si el mes es diciembre y la semana del año es 1, la convierta en la semana 53.
+Ahora bien, como puedes ver, hay una línea de código que modifica manualmente la variable semana. Esto sucede porque `isoweek()` define automáticamente la última semana del año como 1, si contiene algún día del año siguiente. Por esta razón, definimos que si el mes es diciembre y la semana del año es 1, la convierta en la semana 53.
 
 Finalmente, se crea una variable `SEMANA_MES`, de tal manera que se tenga a cuál semana de cada mes pertenece la fecha (1-4) y no la semana del año como en la variable `SEMANA` (1-52).
 
@@ -118,10 +118,12 @@ Cuando corras ese código, vas a tener el siguiente resultado:
 
 ## Un ajuste menor al texto
 
-Como te podrás dar cuenta, los números en color bñanco no son fáciles de leer cuando el color del día es más claro. Esto podrías solucionarlo cambiando el color del texto o, como hice yo, usando el paquete `shadowtext`. Este paquete incluye una función para `ggplot2` que funciona muy parecido a `geom_text()`, sólo que añade una sombra alrededor del texto: `geom_shadowtext()`. Reemplzando esta función en el código de arriba, ¡queda listo el mapa de calor con forma de calendario!
+Como te podrás dar cuenta, los números en color blanco no son fáciles de leer cuando el color del día es más claro. Esto podrías solucionarlo cambiando el color del texto o, como hice yo, usando el paquete `shadowtext`. 
 
-![Calendar Heatmap](/assets/img/posts/2021-05-19-mapas-de-calor-como-calendarios-en-R/calendar_heatmap_shadow.png)
-*Mapa de calor en forma de calendario*
+Este paquete incluye una función para `ggplot2` que funciona muy parecido a `geom_text()`, sólo que añade una sombra alrededor del texto: `geom_shadowtext()`. Reemplazando esta función en el código de arriba, ¡queda listo el mapa de calor con forma de calendario!
+
+![Calendar Heatmap Shadow](/assets/img/posts/2021-05-19-mapas-de-calor-como-calendarios-en-R/calendar_heatmap_shadow.png)
+*Mapa de calor en forma de calendario con sombras*
 
 Con esta visualización podemos ver rápidamente que parece haber unos picos de registros de violencia intrafamiliar en fechas como navidad, año nuevo y el día de la madre, y que en términos generales parece que se registran más casos en los fines de semana. ¿Ves lo fácil que es extraer toda esta información con una sóla mirada?
 
